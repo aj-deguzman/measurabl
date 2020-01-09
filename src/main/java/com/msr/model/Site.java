@@ -24,23 +24,21 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Site {
 
-	@Id
-	private int id;
+    @Id
+    private int id;
 
-	private String name;
+    private String name;
 
-	private String address;
+    private String address;
 
-	private String city;
+    private String city;
 
-	private String state;
+    private String state;
 
-	private String zipcode;
+    private String zipcode;
 
-	private UseTypes ut;
-
-	@Transient
-	private List<SiteUses> siteUses;
+    @Transient
+    private List<SiteUses> siteUses;
 }
 
 ////////////////////////////////////////////////////////////

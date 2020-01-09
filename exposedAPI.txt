@@ -1,0 +1,4 @@
+http://localhost:8080/dataController/siteAndUsageInfo?id={id}
+http://localhost:8080/dataController/allSiteInfo
+http://localhost:8080/dataController/sdSiteInfo
+http://localhost:8080/dataController/deleteSiteByCity?city={city}
