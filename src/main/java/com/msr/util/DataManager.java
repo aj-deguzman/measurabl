@@ -22,12 +22,12 @@ public class DataManager {
 
 	public int populateSiteTable() throws ParseException, IOException, SQLException {
 		this.dbm.setQuery("INSERT INTO SITES VALUES (?, ?, ?, ?, ?, ?)");
-		this.dbm.prepareStmt();
+		this.dbm.prepareStmt(0, 0);
 
 		for (Object o : this.getSitesJSONArray()) {
 			JSONObject sites = (JSONObject) o;
 
-			this.dbm.setIntBindVariable(1, Math.toIntExact((long) sites.get("id")));
+			this.dbm.setIntBindVariable(1, Integer.valueOf(sites.get("id").toString()));
 			this.dbm.setStringBindVariable(2, (String) sites.get("name"));
 			this.dbm.setStringBindVariable(3, (String) sites.get("address"));
 			this.dbm.setStringBindVariable(4, (String) sites.get("city"));
@@ -41,16 +41,16 @@ public class DataManager {
 
 	public int populateSiteUsesTable() throws ParseException, IOException, SQLException {
 		this.dbm.setQuery("INSERT INTO SITE_USES VALUES (?, ?, ?, ?, ?)");
-		this.dbm.prepareStmt();
+		this.dbm.prepareStmt(0, 0);
 
 		for (Object o : this.getSiteUsesJSONArray()) {
 			JSONObject uses = (JSONObject) o;
 
-			this.dbm.setIntBindVariable(1, Math.toIntExact((long) uses.get("id")));
+			this.dbm.setIntBindVariable(1, Integer.valueOf(uses.get("id").toString()));
 			this.dbm.setStringBindVariable(2, (String) uses.get("description"));
-			this.dbm.setIntBindVariable(3, Math.toIntExact((long) uses.get("site_id")));
-			this.dbm.setIntBindVariable(4, Math.toIntExact((long) uses.get("size_sqft")));
-			this.dbm.setIntBindVariable(5, Math.toIntExact((long) uses.get("use_type_id")));
+			this.dbm.setIntBindVariable(3, Integer.valueOf(uses.get("site_id").toString()));
+			this.dbm.setIntBindVariable(4, Integer.valueOf(uses.get("size_sqft").toString()));
+			this.dbm.setIntBindVariable(5, Integer.valueOf(uses.get("use_type_id").toString()));
 			this.dbm.execUpdate();
 		}
 
@@ -59,12 +59,12 @@ public class DataManager {
 
 	public int populateUseTypesTable() throws ParseException, IOException, SQLException {
 		this.dbm.setQuery("INSERT INTO USE_TYPES VALUES (?, ?)");
-		this.dbm.prepareStmt();
+		this.dbm.prepareStmt(0, 0);
 
 		for (Object o : this.getUseTypesJSONArray()) {
 			JSONObject types = (JSONObject) o;
 
-			this.dbm.setIntBindVariable(1, Math.toIntExact((long) types.get("id")));
+			this.dbm.setIntBindVariable(1, Integer.valueOf(types.get("id").toString()));
 			this.dbm.setStringBindVariable(2, (String) types.get("name"));
 			this.dbm.execUpdate();
 		}
