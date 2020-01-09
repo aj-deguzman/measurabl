@@ -23,7 +23,7 @@ public class BuildDatabaseController {
 		this.dbm.setSqlPath(this.SQL_PATH);
 		this.dbm.setSqlFile("BuildTables.sql");
 		this.dbm.getQueryFromFile();
-		this.dbm.prepareStmt(0, 0);
+		this.dbm.prepareStmt();
 		this.dbm.execUpdate();
 
 		return this.dbm.getUpdateResult();

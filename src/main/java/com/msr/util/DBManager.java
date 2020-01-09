@@ -66,13 +66,9 @@ public class DBManager {
 		}
 	}
 
-	public void prepareStmt(int scrollable, int readOnly) {
+	public void prepareStmt() {
 		try {
-			if (scrollable > 0 && readOnly > 0) {
-				this.stmt = this.conn.prepareStatement(this.getQuery(), scrollable, readOnly);
-			} else {
-				this.stmt = this.conn.prepareStatement(this.getQuery());
-			}
+			this.stmt = this.conn.prepareStatement(this.getQuery());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

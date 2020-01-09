@@ -1,6 +1,5 @@
 package com.msr.controller;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.json.simple.JSONArray;
@@ -27,7 +26,7 @@ public class DataController {
 		this.dbm.setSqlPath(this.SQL_PATH);
 		this.dbm.setSqlFile("SiteAndUsageInfo.sql");
 		this.dbm.getQueryFromFile();
-		this.dbm.prepareStmt(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		this.dbm.prepareStmt();
 		this.dbm.setIntBindVariable(1, id);
 		this.dbm.execQuery();
 
@@ -40,7 +39,7 @@ public class DataController {
 		this.dbm.setSqlPath(this.SQL_PATH);
 		this.dbm.setSqlFile("AllSites.sql");
 		this.dbm.getQueryFromFile();
-		this.dbm.prepareStmt(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		this.dbm.prepareStmt();
 		this.dbm.execQuery();
 
 		return this.getASJA();
@@ -52,7 +51,7 @@ public class DataController {
 		this.dbm.setSqlPath(this.SQL_PATH);
 		this.dbm.setSqlFile("SanDiegoSiteInfo.sql");
 		this.dbm.getQueryFromFile();
-		this.dbm.prepareStmt(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		this.dbm.prepareStmt();
 		this.dbm.execQuery();
 
 		return this.getSDSJA();
@@ -64,7 +63,7 @@ public class DataController {
 		this.dbm.setSqlPath(this.SQL_PATH);
 		this.dbm.setSqlFile("DeleteSiteByCity.sql");
 		this.dbm.getQueryFromFile();
-		this.dbm.prepareStmt(0, 0);
+		this.dbm.prepareStmt();
 		this.dbm.setStringBindVariable(1, city);
 		this.dbm.execUpdate();
 

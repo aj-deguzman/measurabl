@@ -22,7 +22,7 @@ public class DataManager {
 
 	public int populateSiteTable() throws ParseException, IOException, SQLException {
 		this.dbm.setQuery("INSERT INTO SITES VALUES (?, ?, ?, ?, ?, ?)");
-		this.dbm.prepareStmt(0, 0);
+		this.dbm.prepareStmt();
 
 		for (Object o : this.getSitesJSONArray()) {
 			JSONObject sites = (JSONObject) o;
@@ -41,7 +41,7 @@ public class DataManager {
 
 	public int populateSiteUsesTable() throws ParseException, IOException, SQLException {
 		this.dbm.setQuery("INSERT INTO SITE_USES VALUES (?, ?, ?, ?, ?)");
-		this.dbm.prepareStmt(0, 0);
+		this.dbm.prepareStmt();
 
 		for (Object o : this.getSiteUsesJSONArray()) {
 			JSONObject uses = (JSONObject) o;
@@ -59,7 +59,7 @@ public class DataManager {
 
 	public int populateUseTypesTable() throws ParseException, IOException, SQLException {
 		this.dbm.setQuery("INSERT INTO USE_TYPES VALUES (?, ?)");
-		this.dbm.prepareStmt(0, 0);
+		this.dbm.prepareStmt();
 
 		for (Object o : this.getUseTypesJSONArray()) {
 			JSONObject types = (JSONObject) o;
