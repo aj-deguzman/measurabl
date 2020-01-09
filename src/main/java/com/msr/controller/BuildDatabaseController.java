@@ -1,4 +1,4 @@
-package com.msr;
+package com.msr.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;

@@ -1,14 +1,15 @@
 package com.msr.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Transient;
-import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * Site info
@@ -23,24 +24,25 @@ import java.util.List;
 @Entity
 public class Site {
 
-    @Id
-    private int id;
+	@Id
+	private int id;
 
-    private String name;
+	private String name;
 
-    private String address;
+	private String address;
 
-    private String city;
+	private String city;
 
-    private String state;
+	private String state;
 
-    private String zipcode;
+	private String zipcode;
 
-    @Transient
-    private List<SiteUses> siteUses;
+	private UseTypes ut;
+
+	@Transient
+	private List<SiteUses> siteUses;
 }
 
 ////////////////////////////////////////////////////////////
 // Copyright 2018  Measurabl, Inc. All rights reserved.
 ////////////////////////////////////////////////////////////
-    
