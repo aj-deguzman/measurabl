@@ -17,7 +17,7 @@
     <properties>
         <java.version>8</java.version>
         <com.google.guava.version>27.1-jre</com.google.guava.version>
-        <commio.version>2.4</commio.version>
+        <commio.version>2.7</commio.version>
     </properties>
 
     <dependencies>
